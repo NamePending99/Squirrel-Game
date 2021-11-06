@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#this script only works for mac OS
+#someone with a different operating system should make similar scripts for the corresponding OS
+
+#before running the script make sure that all required libraries, node.js and npm are installed
+#libraries can be found at the top of server.js
+
+echo
+echo Running script...
+echo
+
+open http://localhost:3333
+
+cd "${0%/*}"
+
+#this is what actually starts the server
+node backend/server.js
