@@ -1,6 +1,19 @@
 /* https://www.color-hex.com/color-palette/114938 */
 
+html {
+    margin: 0px;
+    padding: 0px;
+}
+
 body {
     margin: 0px;
     background-color: #037a76;
+}
+
+#page-content {
+    margin: 10vh;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
 }

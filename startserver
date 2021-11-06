@@ -10,7 +10,7 @@ echo
 echo Running script...
 echo
 
-open http://localhost:3333
+#open http://localhost:3333
 
 cd "${0%/*}"
 
