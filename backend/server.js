@@ -36,7 +36,7 @@ io.on("connection", function(socket) {
 
     client.emit("clientConnected", clientID);
 
-    updateData();
+    accessSpreadsheet();
 
 });
 
@@ -50,19 +50,22 @@ async function accessSpreadsheet() {
 
     try {
         const rows = await sheet.getRows();
-        return rows;
+        var players = [];
+        for(let i=0; i<rows.length; i++) {
+            players.push(new player(rows[i]._rawData[0], rows[i]._rawData[1], rows[i]._rawData[2]));
+        }
+        io.emit("updateData", players);
+        setTimeout(accessSpreadsheet, 20000);
     } catch (err) {
         console.log(err);
         console.log();
     }
 }
 
-function updateData() {
-    accessSpreadsheet().then(function(data) {
-        io.emit("updateData", data[0]._rawData);
-        setTimeout(updateData, 10000);
-    }).catch(function(err) {
-        console.log(err)
-        console.log();
-    });
+class player {
+    constructor(name, status, picture) {
+        this.name = name;
+        this.status = status;
+        this.picture = picture;
+    }
 }

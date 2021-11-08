@@ -7,13 +7,75 @@ html {
 
 body {
     margin: 0px;
-    background-color: #037a76;
+    background-color: #222424;
 }
 
-#page-content {
+#app {
     margin: 10vh;
     display: flex;
     align-items: center;
     align-content: center;
     justify-content: center;
+}
+
+@media only screen and (min-aspect-ratio: 1/1) {
+    #players {
+        margin-top: 10vh;
+        max-width: 72.16vh;
+        max-height: 72.16vh;
+        display: flex;
+        flex-flow: row wrap;
+        transform: rotate(45deg);
+    }
+
+    .player-container {
+        max-width: 9vh;
+        max-height: 9vh;
+        min-width: 9vh;
+        min-height: 9vh;
+        overflow: hidden;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        border: 0.01vh solid rgba(0, 0, 0, 0.562);
+    }
+
+    img {
+        height: 17.5vh;
+        width: 17.5vh;
+        transform: rotate(-45deg);
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-aspect-ratio: 1/1) {
+    #players {
+        margin-top: 10vw;
+        max-width: 72.16vw;
+        max-height: 72.16vw;
+        display: flex;
+        flex-flow: row wrap;
+        transform: rotate(45deg);
+    }
+
+    .player-container {
+        max-width: 9vw;
+        max-height: 9vw;
+        min-width: 9vw;
+        min-height: 9vw;
+        overflow: hidden;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        border: 0.01vw solid rgba(0, 0, 0, 0.562);
+    }
+
+    img {
+        height: 17.5vw;
+        width: 17.5vw;
+        transform: rotate(-45deg);
+        cursor: pointer;
+    }
 }
